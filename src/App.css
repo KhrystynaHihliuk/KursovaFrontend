@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.tickets-list {
+  width: 100%;
+}
+
+.table-container {
+  width: 100%;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
