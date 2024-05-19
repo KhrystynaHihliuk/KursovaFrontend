@@ -16,7 +16,7 @@ function App() {
 
   const fetchTickets = async () => {
     try {
-      let url = 'http://localhost:8080/tickets';
+      let url = 'https://airlineticketsmanage.azurewebsites.net/tickets';
       if (flightNumber !== '' && departureDate !== '') {
         url += `?flightNumber=${flightNumber}&departureDate=${departureDate}`;
       }
@@ -30,7 +30,7 @@ function App() {
 
   const deleteTicket = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/tickets/${id}`, {
+      const response = await fetch(`https://airlineticketsmanage.azurewebsites.net/tickets/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -51,7 +51,7 @@ function App() {
         flightDuration: flightDurationInMinutes
       };
 
-      const response = await fetch('http://localhost:8080/tickets', {
+      const response = await fetch('https://airlineticketsmanage.azurewebsites.net/tickets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ function App() {
   const handleSearch = async () => {
     try {
       const params = new URLSearchParams({ flightNumber, departureDate });
-      const url = `http://localhost:8080/tickets/search?${params.toString()}`;
+      const url = `https://airlineticketsmanage.azurewebsites.net/tickets/search?${params.toString()}`;
       const response = await fetch(url);
       const data = await response.json();
       setTickets(data);
